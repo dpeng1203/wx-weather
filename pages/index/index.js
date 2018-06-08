@@ -6,10 +6,21 @@ const weatherMap = {
   'heavyrain': '大雨',
   'snow': '雪'
 }
+const weatherColorMap = {
+  'sunny': '#cbeefd',
+  'cloudy': '#deeef6',
+  'overcast': '#c6ced2',
+  'lightrain': '#bdd5e1',
+  'heavyrain': '#c5ccd0',
+  'snow': '#aae1fc'
+}
 
 Page({
   data: {
-    items: []
+    items: [],
+    todayTemp: '',
+    todayDate: '',
+    nowWeatherBackground: ''
   },
 
   onPullDownRefresh () {
@@ -28,10 +39,11 @@ Page({
       data: { city: '广州市'},
 
       success: res => {
-       //console.log(res)
+       console.log(res)
         let result = res.data.result
         this.setNow(result)
         this.setHour(result)
+        this.setTaday(result)
       },
 
       complete: () => {
@@ -46,7 +58,12 @@ Page({
     console.log(temp, weather)
     this.setData({
       nowTemp: temp,
-      nowWeather: weatherMap[weather]
+      nowWeather: weatherMap[weather],
+      nowWeatherBackground: '/images/' + weather + '-bg.png'
+    }),
+    wx.setNavigationBarColor({
+      frontColor: '#000000',
+      backgroundColor: weatherColorMap[weather],
     })
   },
 
@@ -54,7 +71,6 @@ Page({
     let items = []
     let nowHour = new Date().getHours()
     let forecast = result.forecast
-    console.log(forecast)
     for (let i = 0; i < 24; i += 3) {
       items.push({
         time: (i + nowHour) % 24 + '时',
@@ -66,5 +82,13 @@ Page({
     this.setData({
       items: items
     })
+  },
+
+  setTaday (result) {
+      let date = new Date()
+      this.setData({
+        todayTemp: `${result.today.minTemp}° - ${result.today.maxTemp}°`,
+        todayDate: `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} 今天`
+      })
   }
 })

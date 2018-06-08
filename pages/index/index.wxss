@@ -21,7 +21,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 755rpx;
+  width: 100%;
   height: 100%;
   z-index: -1;
   background: moccasin;
@@ -42,6 +42,28 @@
   font-size: 30rpx;
   line-height: 42rpx;
   opacity: 0.5
+}
+.day-weather{
+    position: absolute;
+    bottom: 0;
+    left: 40rpx;
+    right: 40rpx;
+    display: flex;
+    align-items: center;
+    height: 90rpx;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 30rpx;
+    line-height: 42rpx;
+    opacity: 0.5;
+}
+.temptext{
+    flex: 1;
+    padding-right: 30rpx;
+    text-align: right;
+}
+.arrow-icon{
+    width: 13rpx;
+    height: 24rpx;
 }
 .wapper{
   display: flex;
