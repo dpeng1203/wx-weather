@@ -39,7 +39,7 @@ Page({
       data: { city: '广州市'},
 
       success: res => {
-       console.log(res)
+      // console.log(res)
         let result = res.data.result
         this.setNow(result)
         this.setHour(result)
@@ -90,5 +90,11 @@ Page({
         todayTemp: `${result.today.minTemp}° - ${result.today.maxTemp}°`,
         todayDate: `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} 今天`
       })
+  },
+  onTapDayWeather() {
+      wx.navigateTo({
+        url: '/pages/list/list',
+      })
+  
   }
 })

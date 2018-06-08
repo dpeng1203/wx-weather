@@ -3,7 +3,7 @@
     <view class='temp'>{{nowTemp}}</view>
     <view class='weather'>{{nowWeather}}</view>
     <image class='weather-bg' src="{{nowWeatherBackground}}"></image>
-    <view class='day-weather'>
+    <view class='day-weather' bindtap='onTapDayWeather'>
         <view class='daytext'>{{todayDate}}</view>
         <view class='temptext'>{{todayTemp}}</view>
         <image src='/images/arrow.png' class='arrow-icon'></image>
