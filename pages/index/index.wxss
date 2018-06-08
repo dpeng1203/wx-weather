@@ -21,8 +21,49 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 755rpx;
   height: 100%;
   z-index: -1;
   background: moccasin;
+}
+.timetips{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40rpx;
+  margin-bottom: 45rpx;
+}
+.icon{
+  width: 36rpx;
+  height: 28rpx;
+  margin-right: 10rpx;
+}
+.timetips-text{
+  font-size: 30rpx;
+  line-height: 42rpx;
+  opacity: 0.5
+}
+.wapper{
+  display: flex;
+}
+ .ct{
+  display: flex;
+  flex-direction: column;
+  width: 120rpx;
+  flex-shrink: 0;
+  align-items: center;
+} 
+.ct-time{
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
+.ct-weather{
+  margin-top: 50rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+.ct-temp{
+  margin-top: 46rpx;
+  font-size: 40rpx;
+  line-height: 56rpx;
 }

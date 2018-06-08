@@ -4,3 +4,17 @@
     <view class='weather'>{{nowWeather}}</view>
     <image class='weather-bg' src='/images/sunny-bg.jpg'></image>
 </view>
+
+<view class='timetips'>
+    <image src='/images/pulse.png' class='icon'></image>
+    <view class="timetips-text">未来24小时天气预测</view>
+</view>
+<scroll-view scroll-x>
+  <view class='wapper'>
+      <view wx:for="{{items}}" class='ct'>
+          <view class='ct-time'>{{item.time}}</view>
+          <image src= '{{item.icon}} '   class='ct-weather'></image>
+          <view class='ct-temp'>{{item.temp}}</view>
+      </view>
+  </view>
+</scroll-view>
