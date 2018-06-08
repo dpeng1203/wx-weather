@@ -11,7 +11,15 @@ Page({
   data: {
 
   },
+  onPullDownRefresh () {
+      this.getNow( () => {
+        wx.stopPullDownRefresh()
+      })
+  },
   onLoad() {
+    this.getNow()
+  },
+  getNow ( callback ) {
     wx.request({
       url: 'https://test-miniprogram.com/api/weather/now',
       data: {
@@ -27,6 +35,9 @@ Page({
           nowTemp: temp,
           nowWeather: weatherMap[weather]
         })
+      },
+      complete: () => {
+        callback && callback()
       }
     })
   }
