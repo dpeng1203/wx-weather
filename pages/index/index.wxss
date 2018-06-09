@@ -25,7 +25,7 @@
 .location-text{
   text-align: center;
   margin-top: 10rpx;
- 
+ height: 42rpx;
 }
 .temp{
   font-size: 200rpx;

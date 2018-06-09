@@ -3,9 +3,9 @@
     <view class='location-wrapper' bindtap='onTapLocation'>
         <view class='location'>
             <image src='/images/location-icon.png' class='location-icon'></image>
-            <view class='location-city'>广州市</view>
+            <view class='location-city'>{{city}}</view>
         </view>
-        <view class='location-text'>点击获取当前城市位置</view>
+        <view class='location-text'>{{locationTipsText}}</view>
     </view>
     <view class='temp'>{{nowTemp}}</view>
     <view class='weather'>{{nowWeather}}</view>
