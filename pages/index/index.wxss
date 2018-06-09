@@ -1,9 +1,31 @@
 /**index.wxss**/
 .weather-wrapper{
   position: relative;
-  padding-top: 174rpx;
+  padding-top: 20rpx;
   padding-bottom: 250rpx;
-  
+  box-sizing: border-box;
+}
+.location-wrapper{
+  font-size: 30rpx;
+  line-height: 42rpx;
+  margin-bottom: 60rpx;
+   opacity: 0.5
+}
+.location{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.location-icon{
+  margin-right: 10rpx;
+  width: 21rpx;
+  height: 30rpx
+}
+.location-text{
+  text-align: center;
+  margin-top: 10rpx;
+ 
 }
 .temp{
   font-size: 200rpx;
